@@ -42,6 +42,52 @@ print("-----")
 // ----------- Write code to sort the array here -----------
 print("Now sorting the array...")
 
+
+var sortedNumbers : [Int] = []
+
+//for _ in 1...20 {
+//    numbers.append( random(between: 1, and: 50) )
+//}
+
+
+numbers.insert(2, at: 4)
+numbers.insert(3, at: 0)
+
+//
+
+var lowest = 0
+var indexLowest = 0
+
+//
+for _ in 0...numbers.count - 1 {
+    
+    // The first number in the array is put into a variable
+    lowest = numbers[0]
+    
+    // The first variable is compaired to each other index in the array
+    for i in 0...numbers.count - 1{
+        
+        // if the initial lowest number is bigger than a value then the value becomes the new lowest
+        if lowest >= numbers[i] {
+            lowest = numbers[i]
+        
+            indexLowest = i
+    
+        }
+       
+    }
+    
+    
+      // Removes the lowest value from the initial array after appending it to a new array
+    sortedNumbers.append(lowest)
+    numbers.remove(at: indexLowest)
+ 
+    
+}
+
+
+
+
 // ----------- Final part of the program, show the sorted list -----------
 print("-----")
 print("The contents of the sorted list:")
